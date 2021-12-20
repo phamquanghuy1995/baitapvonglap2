@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>fibonacci</h1>
+<input id="soluong">
+<br>
+<pre id="print"></pre>
+<button onclick="infibonachi()">In</button>
+<script>
+    function infibonachi() {
+        document.getElementById("print").innerHTML = ""
+        let sl = parseInt(document.getElementById("soluong").value);
+        let fist_number = 0
+        let second_number = 1
+        for (i = 0; i < sl; i++) {
+            if (i <= 1) {
+                next_number = i
+            } else {
+                next_number = fist_number + second_number
+                fist_number = second_number
+                second_number = next_number
+            }
+            document.getElementById("print").innerHTML += next_number
+            if (i<sl-1) {
+                document.getElementById("print").innerHTML +=",";
+            }
+        }
+    }
+</script>
+</body>
+</html>
